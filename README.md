@@ -6,6 +6,22 @@
 
 It's all about speed!
 
+# Resources
+- [Resources](#resources)
+- [Features](#features)
+- [Usage](#usage)
+- [Installation Instructions](#installation-instructions)
+  - [Prerequisite](#prerequisite)
+
+- [Running ](#running-shuffledns)
+
+    - [1. Resolving Subdomains](#1-resolving-subdomains)
+
+    - [2. Bruteforcing Subdomains](#2-bruteforcing-subdomains)
+
+- [License](#license)
+
+
 <a href="https://ibb.co/S3j90XR"><img src="https://i.ibb.co/71f6VJ2/aioresolver.png" alt="aioresolver" border="0"></a>
 
 ### How it works?
