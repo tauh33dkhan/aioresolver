@@ -119,5 +119,5 @@ Make sure to remove duplicate entries from your file before using this tool othe
 <a href=https://twitter.com/tauh33dkhan/ target="_blank">@tauh33dkhan</a>
 
 
-## Thanks
+## Credits and Thanks
 <a href="https://twitter.com/pkrumins/">@pkrumins</a> for sharing AsyncResolver class
