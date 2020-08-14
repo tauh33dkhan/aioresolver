@@ -23,7 +23,7 @@ It's all about speed!
 
 aioresolver uses python-adns module which provides python binding of asynchronous DNS resolver library. While searching for some good examples to use it I found <a href="https://github.com/pkrumins/adns/blob/master/async_dns.py">async_dns.py</a> shared by <a href="https://twitter.com/pkrumins/">@pkrumins</a> I used it's class AsyncResolver in this tool to quickly resolve domains.
 
-## Features
+# Features
 
 - Fast: Resolves domains asynchronously.
 - Simple to use: Does not require list of resolvers to work.
@@ -33,7 +33,7 @@ aioresolver uses python-adns module which provides python binding of asynchronou
 - Easy to integerate in workflow turn off banner using `-b` flag to pipe **stdout** in other tools.
 
 
-## Install aioresolver
+# Install aioresolver
 
 ```bash
 > sudo apt-get install python-adns ( for python3 you can use https://github.com/trolldbois/python3-adns I haven't tried this)
