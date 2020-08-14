@@ -10,7 +10,7 @@ It's all about speed!
 
 ### How it works?
 
-aioresolver uses python-adns module which provides python binding of asynchronous DNS resolver library. While searching for some good examples to use it I found <a href="https://github.com/pkrumins/adns/blob/master/async_dns.py">async_dns.py</a> shared by <a href="https://twitter.com/pkrumins/">@pkrumins</a> I used it's class AsyncResolver in this tool to quickly resolve domains and also modified it to get the CNAME of the domains.
+aioresolver uses python-adns module which provides python binding of asynchronous DNS resolver library. While searching for some good examples to use it I found <a href="https://github.com/pkrumins/adns/blob/master/async_dns.py">async_dns.py</a> shared by <a href="https://twitter.com/pkrumins/">@pkrumins</a> I used it's class AsyncResolver in this tool to quickly resolve domains.
 
 ## Features
 
@@ -18,6 +18,7 @@ aioresolver uses python-adns module which provides python binding of asynchronou
 - Simple to use: Does not require list of resolvers to work.
 - Also Resolves CNAMES and provides option to save the resolved cnames in csv format host,cname.
 - Provides raw output in json format.
+- Provides bruteforcing options to find new domains
 - Easy to integerate in workflow turn off banner using `-b` flag to pipe **stdout** in other tools.
 
 
