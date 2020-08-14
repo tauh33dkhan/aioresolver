@@ -18,7 +18,7 @@ AioResolver is a fast DNS resolver tool it is capable of resolving over 1000 nam
 
 ### How it works?
 
-aioresolver uses python-adns module which provides python binding of asynchronous DNS resolver library. While searching for some good examples to use it I found <a href="https://github.com/pkrumins/adns/blob/master/async_dns.py">async_dns.py</a> shared by <a href="https://twitter.com/pkrumins/">@pkrumins</a> I used it's class AsyncResolver in this tool to quickly resolve domains.
+aioresolver use python-adns module which provides python binding of asynchronous DNS resolver library. While searching for some good examples to use it I found <a href="https://github.com/pkrumins/adns/blob/master/async_dns.py">async_dns.py</a> shared by <a href="https://twitter.com/pkrumins/">@pkrumins</a> and I used it's class AsyncResolver in this tool to quickly resolve domains.
 
 
 
