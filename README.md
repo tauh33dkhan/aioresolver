@@ -4,7 +4,7 @@
 
 
 
-It's all about speed resolved 1000 domains using this script and it only took 0m0.204s to resolve.
+It's all about speed resolved 1000 domains in 0m0.204s.
 
 <a href="https://ibb.co/S3j90XR"><img src="https://i.ibb.co/71f6VJ2/aioresolver.png" alt="aioresolver" border="0"></a>
 
