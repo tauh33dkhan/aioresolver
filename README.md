@@ -8,23 +8,10 @@ AioResolver is a fast DNS resolver tool it is capable of resolving over 1000 nam
 
 - Fast: Resolves domains asynchronously.
 - Simple to use: Does not require list of resolvers to work.
-- Provides bruteforcing options to find new domains
-- Also Resolves CNAMES and provides option to save the resolved cnames in csv format host,cname.
+- Provides bruteforce option to find new domains
+- Resolves CNAMES and provides option to save the resolved cnames in csv format(host,cname).
 - Provides raw output in json format.
-
 - Easy to integerate in workflow turn off banner using `-b` flag to pipe **stdout** in other tools.
-
-
-
-# Resources
-- [Features](https://github.com/tauh33dkhan/aioresolver/blob/master/README.md#features)
-- [Usage](https://github.com/tauh33dkhan/aioresolver/blob/master/README.md#usage)
-- [Installation Instructions](#installation-instructions)
-  - [Prerequisite](#prerequisite)
-- [Running ](#running-shuffledns)
-    - [1. Resolving Subdomains](#1-resolving-subdomains)
-    - [2. Bruteforcing Subdomains](#2-bruteforcing-subdomains)
-- [License](#license)
 
 
 <a href="https://ibb.co/S3j90XR"><img src="https://i.ibb.co/71f6VJ2/aioresolver.png" alt="aioresolver" border="0"></a>
