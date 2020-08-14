@@ -47,15 +47,11 @@ cd python3-adns
 python3 setup install
 ```
 
-3. Install python json module.
-```
-pip3 install json
-```
-
 ### Install aioresolver
 ```
-> git clone https://github.com/tauh33dkhan/aioresolver.git
-> cd aioresolver
+pip3 install json
+git clone https://github.com/tauh33dkhan/aioresolver.git
+cd aioresolver
 ```
 
 
