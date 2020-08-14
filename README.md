@@ -27,7 +27,7 @@ aioresolver requires python-adns module if you are still using python-2.7 you ca
 ```bash
 > apt-get install python-adns
 ```
-### for python3
+### For python3
 
 There is python3 port for adns to install follow following steps
 
