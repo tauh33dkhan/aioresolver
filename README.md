@@ -7,7 +7,6 @@
 It's all about speed!
 
 # Resources
-- [Resources](#resources)
 - [Features](#features)
 - [Usage](#usage)
 - [Installation Instructions](#installation-instructions)
