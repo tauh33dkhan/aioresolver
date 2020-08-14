@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tauh33dkhan/aioresolver/issues)
 
-AioResolver is a fast DNS resolver tool it is capable of resolving over 1000 names in 0.2 seconds with 100% accuracy targeting those who seek to resolve alot of domains without any special configuration such as need of valid list of resolvers.
+aioresolver is a fast DNS resolver tool it is capable of resolving over 1000 names in 0.2 seconds with 100% accuracy targeting those who seek to resolve alot of domains without any special configuration such as need of valid list of resolvers.
 
 # Features
 
@@ -23,17 +23,37 @@ aioresolver use python-adns module which provides python binding of asynchronous
 
 ### Prerequisite
 
-aioresolver requires python-adns module you can install it using package manager
-### Install aioresolver
-
+aioresolver requires python-adns module if you are still using python-2.7 you can install it using package manager.
 ```bash
-sudo apt-get install python-adns
+> apt-get install python-adns
 ```
-for python3 you can use https://github.com/trolldbois/python3-adns I haven't tried this)
+### for python3
 
-```bash
-> sudo apt-get install python-adns ( for python3 you can use https://github.com/trolldbois/python3-adns I haven't tried this)
-> sudo pip install json
+There is python3 port for adns to install follow following steps
+
+1. First download and install current release of adns_ libraries from http://www.chiark.greenend.org.uk/~ian/adns/
+```
+wget http://www.chiark.greenend.org.uk/~ian/adns/adns.tar.gz
+tar -xvf adns.tar.gz
+cd adns-1.5.0/
+./configure
+make
+make install
+```
+2. Download and install python3 port of adns
+```
+git clone --depth 1 https://github.com/trolldbois/python3-adns.git
+cd python3-adns
+python3 setup install
+```
+
+3. Install python json module.
+```
+pip3 install json
+```
+
+### Install aioresolver
+```
 > git clone https://github.com/tauh33dkhan/aioresolver.git
 > cd aioresolver
 ```
