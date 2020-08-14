@@ -1,4 +1,8 @@
 # Async-Resolver
+[![License](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tauh33dkhan/aioresolver/issues)
+
+
 
 It's all about speed resolved 1000 domains using this script and it only took 0m0.204s to resolve.
 
