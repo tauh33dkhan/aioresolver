@@ -7,8 +7,8 @@
 It's all about speed!
 
 # Resources
-- [Features](#features)
-- [Usage](#usage)
+- [Features](https://github.com/tauh33dkhan/aioresolver/blob/master/README.md#features)
+- [Usage](https://github.com/tauh33dkhan/aioresolver/blob/master/README.md#usage)
 - [Installation Instructions](#installation-instructions)
   - [Prerequisite](#prerequisite)
 - [Running ](#running-shuffledns)
