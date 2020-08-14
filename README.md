@@ -12,13 +12,9 @@ It's all about speed!
 - [Usage](#usage)
 - [Installation Instructions](#installation-instructions)
   - [Prerequisite](#prerequisite)
-
 - [Running ](#running-shuffledns)
-
     - [1. Resolving Subdomains](#1-resolving-subdomains)
-
     - [2. Bruteforcing Subdomains](#2-bruteforcing-subdomains)
-
 - [License](#license)
 
 
