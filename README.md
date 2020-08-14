@@ -1,12 +1,9 @@
 # Async-Resolver
 
-#### It's all about speed
-
-Resolving 1000 domains using this script and it only takes 0m0.204s to resolve.
+It's all about speed resolved 1000 domains using this script and it only took 0m0.204s to resolve.
 
 <a href="https://ibb.co/S3j90XR"><img src="https://i.ibb.co/71f6VJ2/aioresolver.png" alt="aioresolver" border="0"></a>
 
-​
 ### How it works?
 
 aioresolver uses python-adns module which provides python binding of asynchronous DNS resolver library. While searching for some good examples to use it I found <a href="https://github.com/pkrumins/adns/blob/master/async_dns.py">async_dns.py</a> shared by <a href="https://twitter.com/pkrumins/">@pkrumins</a> I used it's class AsyncResolver in this tool to quickly resolve domains and also modified it to get the CNAME of the domains.
