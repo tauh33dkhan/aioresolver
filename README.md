@@ -2,7 +2,7 @@
 
 #### It's all about speed
 
-Resolving 1000 domains using this script and it only takes 0m0.172s to resolve.
+Resolving 1000 domains using this script and it only takes 0m0.204s to resolve.
 
 <a href="https://ibb.co/S3j90XR"><img src="https://i.ibb.co/71f6VJ2/aioresolver.png" alt="aioresolver" border="0"></a>
 
