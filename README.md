@@ -1,10 +1,9 @@
-# Async-Resolver
+# AioResolver
 [![License](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tauh33dkhan/aioresolver/issues)
 
+AioResolver is a fast DNS resolver tool, AioResolver is capable of resolving over 1000 names in 0.2 seconds with 100% accuracy targeting those who seek to resolve alot of domains without any special configuration such as need of list of valid resolvers.
 
-
-It's all about speed!
 
 # Resources
 - [Features](https://github.com/tauh33dkhan/aioresolver/blob/master/README.md#features)
@@ -23,14 +22,6 @@ It's all about speed!
 
 aioresolver uses python-adns module which provides python binding of asynchronous DNS resolver library. While searching for some good examples to use it I found <a href="https://github.com/pkrumins/adns/blob/master/async_dns.py">async_dns.py</a> shared by <a href="https://twitter.com/pkrumins/">@pkrumins</a> I used it's class AsyncResolver in this tool to quickly resolve domains.
 
-# Features
-
-- Fast: Resolves domains asynchronously.
-- Simple to use: Does not require list of resolvers to work.
-- Also Resolves CNAMES and provides option to save the resolved cnames in csv format host,cname.
-- Provides raw output in json format.
-- Provides bruteforcing options to find new domains
-- Easy to integerate in workflow turn off banner using `-b` flag to pipe **stdout** in other tools.
 
 
 # Install aioresolver
