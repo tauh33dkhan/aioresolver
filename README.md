@@ -2,7 +2,18 @@
 [![License](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tauh33dkhan/aioresolver/issues)
 
-AioResolver is a fast DNS resolver tool, AioResolver is capable of resolving over 1000 names in 0.2 seconds with 100% accuracy targeting those who seek to resolve alot of domains without any special configuration such as need of list of valid resolvers.
+AioResolver is a fast DNS resolver tool it is capable of resolving over 1000 names in 0.2 seconds with 100% accuracy targeting those who seek to resolve alot of domains without any special configuration such as need of list of valid resolvers.
+
+# Features
+
+- Fast: Resolves domains asynchronously.
+- Simple to use: Does not require list of resolvers to work.
+- Provides bruteforcing options to find new domains
+- Also Resolves CNAMES and provides option to save the resolved cnames in csv format host,cname.
+- Provides raw output in json format.
+
+- Easy to integerate in workflow turn off banner using `-b` flag to pipe **stdout** in other tools.
+
 
 
 # Resources
