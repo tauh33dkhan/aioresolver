@@ -29,7 +29,7 @@ aioresolver requires python-adns module if you are still using python-2.7 you ca
 ```
 ### For python3
 
-There is python3 port for adns to install it follow following steps:
+There is python3 port for adns is available to install it follow the following steps or use the docs available here https://www.freshports.org/dns/py-adns/:
 
 1. First download and install current release of adns_ libraries from http://www.chiark.greenend.org.uk/~ian/adns/
 ```
