@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tauh33dkhan/aioresolver/issues)
 
-aioresolver is a fast DNS resolver tool it is capable of resolving over 1000 names in 0.2 seconds with accuracy targeting those who seek to resolve alot of domains without any special configuration such as need of valid list of resolvers.
+aioresolver is a fast DNS resolver tool it is capable of resolving over 1000 domain names in 0.2 seconds with accuracy targeting those who seek to resolve alot of domains without any special configuration such as need of valid list of resolvers.
 
 # Features
 
