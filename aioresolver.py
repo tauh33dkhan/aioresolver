@@ -157,7 +157,7 @@ if __name__ == "__main__":
     cname_output = False
 
   if args.intensity:
-    intensity = args.intensity
+    intensity = int(args.intensity)
   else:
     intensity = 100
   if args.silent:
