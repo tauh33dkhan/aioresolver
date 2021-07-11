@@ -67,8 +67,8 @@ cd aioresolver
 | -cO        | Use this option to resolve CNAME and save result in a csv file                                | aioresolver -f tesla.txt -cO cname.csv                       |
 | -r         | Save raw output in a json file(raw.json)                   | aioresolver -f tesla.txt -r         |
 | -i    | Intensity - Number of domains to resolves at once, Default=100                          | aioresolver -f tesla.txt -i 500        |
-| -d    |   | async-resolver -d example.com -w wordlist.txt
-| -w    | Wordlist to use for bruteforcing    | async-resolver -d example.com -w wordlist.txt    |
+| -d    |   | aioresolver -d example.com -w wordlist.txt
+| -w    | Wordlist to use for bruteforcing    | aioresolver -d example.com -w wordlist.txt    |
 | -b   | Use this option to turn off banner                                       | aioresolver -f tesla.txt -b  |
 
 
@@ -110,16 +110,16 @@ for i in resolved.items():
 
 #### 4. Bruteforce
 
-Async-Resolver provides bruteforcing options to find new domains
+aioresolver provides bruteforcing options to find new domains
 
 ```bash
-> async-resolver -d example.com -w wordlist.txt
+> aioresolver -d example.com -w wordlist.txt
 ```
 
 #### 5. Turn off Banner
 
 ```bash
-> async-resolver -f tesla.txt -b | httprobe
+> aioresolver -f tesla.txt -b | httprobe
 ```
 
 This will turn off the banner so you can pipe resolved domains to other tools like httprobe

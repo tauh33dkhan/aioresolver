@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 #
-# Async-Resolver
+# aioresolver
 #
 # https://github.com/tauh33dkhan/asyn-resolver.git
 #
