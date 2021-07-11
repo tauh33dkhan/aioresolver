@@ -60,6 +60,7 @@ def output(resolved):
         json_file = open("raw.json", 'w')
         r = json.dumps(resolved)
         json_file.write(str(r))  # Saving resolved/not resolved hosts in json format to raw.txt file
+        print("[+] Saved resolved/not resolved hosts in json format to raw.txt file\n")
 
     if do_out:
         print("[+] Saved resolved hosts in \"{}\" file".format(args.output))
@@ -142,7 +143,7 @@ class AsyncResolver(object):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-f", "--file", help="file with domains to resolve")
+    parser.add_argument("-f", "--file", help="file with domain names to resolve")
     parser.add_argument("-o", "--output")
     parser.add_argument(
         "-c", "--cname", help="Resolve CNAME", action="store_true")

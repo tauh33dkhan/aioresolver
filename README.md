@@ -93,7 +93,20 @@ This will resolve all the domains in tesla.txt and saves the raw result in the r
 ```json
 {"host":["ip","CNAME"],"host":["None","None"]}
 ```
-if a domain is not resolved then you will see None in the value
+if a domain is not resolved then you will see None in the value, To read from raw.json file you can use the following python script this script will return host,ip,cname from raw.json file
+```
+import json
+
+f = open("raw.json",'r')
+resolved = json.load(f)
+for i in resolved.items():
+    host = i[0]
+    ip, cname = i[1]
+    if ip is None:
+        not_alive_host = host  # Returns Not Alive hosts
+    else:
+        print("%s,%s,%s" % (host,ip,cname))
+```
 
 #### 4. Bruteforce
 
