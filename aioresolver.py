@@ -12,66 +12,76 @@ import sys
 import argparse
 import json
 
+
+version = "v1.2"
+
 def Banner():
-  if banner:
-    print("""\033[32m
-       _                           _                
-      (_)                         | |               
-  __ _ _  ___  _ __ ___  ___  ___ | |_   _____ _ __ 
+    if banner:
+        print("""\033[32m
+       _                           _
+      (_)                         | |
+  __ _ _  ___  _ __ ___  ___  ___ | |_   _____ _ __
  / _` | |/ _ \| '__/ _ \/ __|/ _ \| \ \ / / _ \ '__|
-| (_| | | (_) | | |  __/\__ \ (_) | |\ V /  __/ |   
- \__,_|_|\___/|_|  \___||___/\___/|_| \_/ \___|_|   
-                                                    
-                                                    
+| (_| | | (_) | | |  __/\__ \ (_) | |\ V /  __/ |
+ \__,_|_|\___/|_|  \___||___/\___/|_| \_/ \___|_|\033[0m
+						 \033[31mv1.2
+
 \033[0m""")
 
+
 def resolve():
-  try:
-    with open(file_name, 'r') as f:
-      myNames = [line.strip() for line in f]
-  except:
+    try:
+        with open(file_name, 'r') as f:
+            myNames = [line.strip() for line in f]
+    except IOError:
+        Banner()
+        print("[!] File \"{}\" does not exist".format(file_name))
+        exit()
     Banner()
-    print("[!] File \"{}\" Does not exist".format(file_name))
-    exit()
-  Banner()
-  ar = AsyncResolver(myNames,intensity)
-  resolved = ar.resolve()
-  output(resolved)
+    ar = AsyncResolver(myNames, intensity)
+    resolved = ar.resolve()
+    output(resolved)
+
 
 def bruteforce():
-  try:
-    with open(wordlist, 'r') as wl:
-      w = [line.strip() + "." + domain for line in wl]
-  except:
-    exit()
-  ar = AsyncResolver(w,intensity)
-  resolved = ar.resolve()
-  output(resolved)
+    try:
+        with open(wordlist, 'r') as wl:
+            w = [line.strip() + "." + domain for line in wl]
+    except IOError:
+        exit("[!] Unable to read wordlist file: \"{}\"".format(w))
+    ar = AsyncResolver(w, intensity)
+    resolved = ar.resolve()
+    print(resolved)
+    output(resolved)
+
 
 def output(resolved):
-  if print_raw:
-    json_file = open("raw.json",'w')
-    r = json.dumps(resolved)
-    json_file.write(str(r)) # Saving resolved/not resolved hosts in json format to raw.txt file
+    if print_raw:
+        json_file = open("raw.json", 'w')
+        r = json.dumps(resolved)
+        json_file.write(str(r))  # Saving resolved/not resolved hosts in json format to raw.txt file
 
-  if do_out:
-    print("[+] Saved resolved hosts in \"{}\" file".format(args.output))
-  for i in resolved.items():
-    host = i[0]
-    ip,cname = i[1]
-    if ip is None:
-      not_alive_host = host # Returns Not Alive hosts do whatever you want to do with it.
-    else:
-      if do_out:
-        out_file.write(host+"\n")
-      else:
-        if resolve_cname or cname_output:
-          if cname_output:
-            cname_ofile.write("{},{}\n".format(host, cname))
-          else:
-            print("{},{}".format(host,cname))
+    if do_out:
+        print("[+] Saved resolved hosts in \"{}\" file".format(args.output))
+
+    for i in resolved.items():
+        host = i[0]
+        ip, cname = i[1]
+        if ip is None:
+            not_alive_host = host  # Returns Not Alive hosts do whatever you want to do with it
         else:
-          print(host)
+            if do_out:
+                out_file.write(host+"\n")
+            elif resolve_cname or cname_output:
+                if cname_output:
+                    cname_ofile.write("{},{}\n".format(host, cname))
+                else:
+                    print("{},{}".format(host, cname))
+            else:
+                print(host)
+
+    if cname_output:
+        print("[+] Saved resolved CNAMES in \"{}\" file".format(args.output_cname))
 
 #####################################################################
 #  Following Class is taken from async_dns.py coded by Peter Krumins
@@ -85,6 +95,7 @@ def output(resolved):
 #
 # Read more about how this code works in my post:
 # www.catonmat.net/blog/asynchronous-dns-resolution
+
 
 class AsyncResolver(object):
     def __init__(self, hosts, intensity=100):
@@ -108,7 +119,7 @@ class AsyncResolver(object):
                     ip = answer[3][0]
                     cname = answer[1]
                     resolved_hosts[host] = [ip, cname]
-                elif answer[0] == 101: # CNAME
+                elif answer[0] == 101:  # CNAME
                     query = self.adns.submit(answer[1], adns.rr.A)
                     active_queries[query] = host
                 else:
@@ -128,63 +139,83 @@ class AsyncResolver(object):
 
 # AsyncResolver class ends here
 
+
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser()
-  parser.add_argument("-f", "--file", help="file with domains to resolve")
-  parser.add_argument("-o", "--output")
-  parser.add_argument("-c", "--cname", help="Resolve CNAME", action="store_true")
-  parser.add_argument("-cO", "--output-cname")
-  parser.add_argument("-r", "--raw", help="Save resolved/not-resolved domains in a raw.json file", action="store_true")
-  parser.add_argument("-i", "--intensity", help="Number of domains to resolves at once, Default=100")
-  parser.add_argument("-s", "--silent", help="Use this option to turn off banner", action="store_true")
-  parser.add_argument("-d", "--domain")
-  parser.add_argument("-w", "--wordlist", help="Wordlist to use for bruteforcing")
-  args = parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--file", help="file with domains to resolve")
+    parser.add_argument("-o", "--output")
+    parser.add_argument(
+        "-c", "--cname", help="Resolve CNAME", action="store_true")
+    parser.add_argument("-cO", "--output-cname")
+    parser.add_argument(
+        "-r", "--raw", help="Save resolved/not-resolved domains in a raw.json file", action="store_true")
+    parser.add_argument(
+        "-i", "--intensity", help="Number of domains to resolves at once, Default=100")
+    parser.add_argument(
+        "-s", "--silent", help="Use this option to turn off banner", action="store_true")
+    parser.add_argument("-d", "--domain")
+    parser.add_argument("-w", "--wordlist",
+                        help="Wordlist to use for bruteforcing")
+    parser.add_argument("-v", "--version", help="Show version", action="store_true")
+    args = parser.parse_args()
 
-  file_name = args.file
-  silent = args.silent
-  wordlist = args.wordlist
-
-  if args.cname:
-    resolve_cname = True
-  else:
-    resolve_cname = False
-
-  if args.output_cname:
-    cname_output = True
-    cname_ofile = open(args.output_cname,"w")
-  else:
-    cname_output = False
-
-  if args.intensity:
-    intensity = int(args.intensity)
-  else:
-    intensity = 100
-  if args.silent:
-    banner = False
-  else:
-    banner = True
-  if args.output:
-    out_file = open(args.output,'a')
-    do_out = True
-  else:
-    do_out = False
-  if args.raw:
-    print_raw = True
-  else:
-    print_raw = False
-  if args.domain:
+    file_name = args.file
+    silent = args.silent
     wordlist = args.wordlist
-    domain = args.domain
-    Banner()
-    bruteforce()
-    exit()
-  if args.file:
-    resolve()
-  else:
-    Banner()
-    print("[!] Please provide a file with domains to resolve\n")
-    print("[-] Use -h to see help")
-  if len(sys.argv)==1:
-    parser.print_help(sys.stderr)
-    sys.exit(1)
+
+    if args.cname:
+        resolve_cname = True
+    else:
+        resolve_cname = False
+
+    if args.output_cname:
+        cname_output = True
+        cname_ofile = open(args.output_cname, "w")
+    else:
+        cname_output = False
+
+    if args.intensity:
+        intensity = int(args.intensity)
+    else:
+        intensity = 100
+
+    if args.silent:
+        banner = False
+    else:
+        banner = True
+
+    if args.output:
+        out_file = open(args.output, 'a')
+        do_out = True
+    else:
+        do_out = False
+
+    if args.raw:
+        print_raw = True
+    else:
+        print_raw = False
+
+    if args.domain:
+        wordlist = args.wordlist
+        domain = args.domain
+        Banner()
+        bruteforce()
+        exit()
+
+    if args.version:
+       print("Version: %s" % version)
+       exit()
+
+    if args.file:
+        resolve()
+    else:
+        Banner()
+        print("[!] Please provide a file with domain names to resolve\n")
+        print("[-] Use -h to see help")
+
+    if len(sys.argv) == 1:
+        parser.print_help(sys.stderr)
+        sys.exit(1)
+
+    if args.version:
+       print(version)
