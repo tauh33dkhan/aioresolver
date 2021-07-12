@@ -62,7 +62,12 @@ def output(resolved):
         print("[+] Saved resolved/not resolved hosts in json format to raw.txt file\n")
 
     if do_out:
-        print("[+] Saved resolved hosts in \"{}\" file".format(args.output))
+        print("[+] Saving resolved hosts in \"{}\" file".format(args.output))
+        wofile = out_file.write
+
+    if cname_output:
+        print("[+] Saving resolved CNAMES in \"{}\" file".format(args.output_cname))
+        wcnamefile = cname_ofile.write
 
     for i in resolved.items():
         host = i[0]
@@ -71,17 +76,15 @@ def output(resolved):
             not_alive_host = host  # Returns Not Alive hosts do whatever you want to do with it
         else:
             if do_out:
-                out_file.write(host+"\n")
+                wofile(host+"\n")
             elif resolve_cname or cname_output:
                 if cname_output:
-                    cname_ofile.write("{},{}\n".format(host, cname))
+                    wcnamefile("%s,%s\n" % (host, cname))
                 else:
-                    print("{},{}".format(host, cname))
+                    print("%s,%s" % (host, cname))
             else:
                 print(host)
 
-    if cname_output:
-        print("[+] Saved resolved CNAMES in \"{}\" file".format(args.output_cname))
 
 #####################################################################
 #  Following Class is taken from async_dns.py coded by Peter Krumins
