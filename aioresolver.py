@@ -46,12 +46,11 @@ def resolve():
 def bruteforce():
     try:
         with open(wordlist, 'r') as wl:
-            w = [line.strip() + "." + domain for line in wl]
+            w = ["%s.%s" % (line.strip(),domain) for line in wl]
     except IOError:
         exit("[!] Unable to read wordlist file: \"{}\"".format(w))
     ar = AsyncResolver(w, intensity)
     resolved = ar.resolve()
-    print(resolved)
     output(resolved)
 
 
