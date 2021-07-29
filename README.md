@@ -33,6 +33,7 @@ There is python3 port for adns is available to install it follow the following s
 
 1. First download and install current release of adns_ libraries from http://www.chiark.greenend.org.uk/~ian/adns
 ```
+sudo apt-get install libadns1-dev
 wget http://www.chiark.greenend.org.uk/~ian/adns/adns.tar.gz
 tar -xvf adns.tar.gz
 cd adns-1.5.0/
