@@ -78,7 +78,7 @@ cd aioresolver
 ```bash
 > aioresolver.py -f tesla.txt   
 ```
-This will resolve domains names in tesla.txt file and returns all the live domains, use <b>-resp</b> options to print `A` record and <b>-o</b> option to save output in a file.
+This will resolve domain names in tesla.txt file and returns all the live domains, use <b>-resp</b> option to print `A` record and <b>-o</b> option to save output in a file.
 
 
 #### 2. Query CNAME
@@ -92,7 +92,7 @@ This will extract CNAME record of all the domain names in tesla.txt file, use <b
 ```bash
 > aioresolver.py -f tesla.txt -query MX -resp
 ```
-This will extract MX record of all the domain names in tesla.txt file, output is given in json format which you can read using jq.
+This will resolve MX record of all the domain names in tesla.txt file and the output is given in json format which you can read using jq.
 ```json
 {"host1":["ANSWER1","ANSWER2"],"host2":["ANSWER1","ANSWER2", "ANSWER3"]}
 ```
