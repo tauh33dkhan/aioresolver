@@ -71,14 +71,14 @@ class AioResolver(object):
         self.query_record = query_record
         self.resolved_hosts = 0
         self.resolverlist = resolverlist
-        # if self.resolverlist:
-        #     resolver = ""
-        #     with open(self.resolverlist, "r") as wl:
-        #         for line in wl:
-        #             resolver += "nameserver "+line
-        #     self.adns = adns.init(configtext=resolver)
-        # else:
-        self.adns = adns.init()
+        if self.resolverlist:
+            resolver = ""
+            with open(self.resolverlist, "r") as wl:
+               for line in wl:
+                    resolver += "nameserver "+line
+               self.adns = adns.init(configtext=resolver)
+        else:
+            self.adns = adns.init()
         if self.track:
             self.trackingdict = {} 
         
