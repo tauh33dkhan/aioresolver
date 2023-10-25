@@ -27,8 +27,6 @@ aioresolver requires python-adns module if you are still using python-2.7 you ca
 ```
 ### For python3
 
-There is python3 port for adns is available to install it follow the steps given below or use the docs available here https://www.freshports.org/dns/py-adns/:
-
 1. First download and install current release of adns_libraries.
 ```
 sudo apt-get install libadns1-dev
@@ -41,8 +39,8 @@ sudo make install
 ```
 2. Download and install python3 port of adns
 ```
-git clone --depth 1 https://github.com/trolldbois/python3-adns.git
-cd python3-adns
+git clone --depth 1 https://gitlab.com/kalilinux/packages/python-adns
+cd python-adns
 sudo python3 setup.py install
 ```
 
