@@ -136,19 +136,21 @@ class AioResolver(object):
                     if query_record == 1 or query_record == 5: 
                         self.resolved_hosts += 1
                         if query_record == 1:
-                            ip = answer[3][0]
-                            if ip is None:
+                            ips = answer[3]
+                            if ips[0] is None:
                                 not_alive_host = host # Returns Not Alive hosts do whatever you want to do with it.
                             else:
                                 if self.track:
-                                    if ip in self.trackingdict:
-                                        self.trackingdict[ip].append(host)
-                                    else:
-                                        self.trackingdict[ip] = [host]
+                                    ips = answer[3]
+                                    for ip in ips:
+                                        if ip in self.trackingdict:
+                                            self.trackingdict[ip].append(host)
+                                        else:
+                                            self.trackingdict[ip] = [host]
                                 elif self.resp:
-                                    print("{},{}".format(host, ip)) 
+                                    print("{},{}".format(host, ",".join(ips)))
                                     if self.out_file:
-                                        out_file.write("{},{}\n".format(host, ip)) 
+                                        out_file.write("{},{}\n".format(host, ",".join(ips))) 
                                 else:
                                     print(host)
                                     if self.out_file:
