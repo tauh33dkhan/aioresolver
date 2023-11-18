@@ -150,7 +150,7 @@ class AioResolver(object):
                                 elif self.resp:
                                     print("{},{}".format(host, ",".join(ips)))
                                     if self.out_file:
-                                        out_file.write("{},{}\n".format(host, ip)) 
+                                        out_file.write("{},{}\n".format(host, ",".join(ips))) 
                                 else:
                                     print(host)
                                     if self.out_file:
